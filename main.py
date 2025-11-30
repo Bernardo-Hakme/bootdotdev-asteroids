@@ -56,8 +56,8 @@ def main():
             for shot in shots:
                 if asteroid.collides_with(shot):
                     log_event("asteroid_shot")
-                    pygame.sprite.Sprite.kill(shot)
-                    pygame.sprite.Sprite.kill(asteroid)
+                    shot.kill()
+                    asteroid.split()
 
         for object in drawable:
             object.draw(screen)  # Draw drawables one by one
